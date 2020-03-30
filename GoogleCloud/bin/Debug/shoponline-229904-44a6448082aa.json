@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "shoponline-229904",
+  "private_key_id": "44a6448082aa625987a7744435ed99a3d4695c52",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0BM4gTdig7pbL\n9a2sgAGWY9vNR6+c2IQkqYwiLKemJe10PPb9Slb/cjxSk8kn9K9uMi4jvuHsT+8L\ngMc5MrweKVQeOAHLuu7BnnCxY3s4/kt7bNO1qbzIBVUNwQ+vRkHXwpakVFfSqDYt\nfHH2IqCx0eyLdCBjldYJAjcIqxzcrqtoSVfsHKvGQ7SM+Z+ejOdSzpfX79ULTB5G\nXjtO+UXb+E8MuEaDj0pxDCSoA8m83Ee3GwExu6tcPU7/1PlohAeNV8RCj+/Xrs8E\n5A+ihQgNO/nICymDH/4y7fgsYrnF99VfNLAUmnAFZukMNbbYDtD+xRPOZ52e0Em2\ngJDw6tttAgMBAAECggEAGs4OXUwKIih0pskdw65JzjlvTLlMYmfxAT6Hwbzxd7F1\nEpZTVrLfkmjRp6Ae10a9aoSpTyRIorXiS82wnIk77qfLwTYoukvK6mSrthYwjnN7\nDNVPDuFH3WbB2+rv6XLmMfjlEnIGo7TtYEeD9pkAYYn3FWrEud9hP/Um+bD0+rz9\nJcIgwaA1ksoRHRbeFQLyqW07jgN44D1evJ9DInNpUjZyYXDWGwkckkg/w+e5YFHM\nrgS5xXAzUXxS/U0GJlyYBZS4sHWYTWcjRbfEWoheP7G8KiVioRfINpZW6OicgcqP\nqHNu73xGhtQZRpM1ntIRGYbWvSAeTF4Wcpi2bRZqAQKBgQDxRmvqfYrACRTZv2Im\nw7exaYoSs3MHUHSHvqYw40leZK0obomIj+znL7RFVoyHR5EXgFel8129PTQje0iR\nWauD0orO4MQJwwrE0vXDe7miBqZrgOuZqIkWeW+bN8ycCF942f4irBHvsUzOL5mb\ngDuI4/HujWpdPZdF16FTkOBcbQKBgQC/AVdcTtCxRxAV1mt1+OiogKoIAIijSqKE\npvaMalW7e3HNs8e8GwgKNVHjzNRQ0eS7ty3D4omCrUiQYegexxB8pF1T5Y9iXLFZ\nR6NYq5HcaoIYHKm6DRQH+BKEYL8pJ53A9IUFFn7SHzmYdqCWbhe6IFyW1TnC2kfG\nvdpYupcbAQKBgAJw2vChWoD81ogpZn3L5xTVY38y74v4ZWVmKVo/QmPBEvtguuV1\nx0jDc8hryronoDEjrD9SifU7JEbjnWVTCegofhz/qxwKLBa3p6LVopggBxj5UejZ\nCqH+koF4fApsD0MyuV5ybTAGlCdV1fD7yB5nZ/Ao4BWXZOtg9hHZWlu1AoGAe7FZ\nqrybp4JWp12xP7fOq3iPJBl8YwrtTix10571IDGkFEtNmMKEpV+8RWKbSC91Ch9p\nMsacuJSRPnc5A910DtO+YJt0DIXsj921qbGKBwyubQD65TKc+0AqdbHVeche/9sZ\n3Z6gyGBSQyrneiOXmABnFYLGIiqLeuft47IKMwECgYAkBYbrBH5k+++HrzFtC7ks\nH8MtZaIVO8665LCrm2HWd7UHkCu6gsR+LJSmxJjSuiOR+ncT/gfQv6nSDPK1OzAs\n9KJ0VJkcUEu4z+vfHeSGGT2PRfcMGoN0OKFit0GzswrcE+nDDIcCczdLo5A/VBiv\n6WOT7zXcm3ZbXmNrDrWMaw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "danghung@shoponline-229904.iam.gserviceaccount.com",
+  "client_id": "112417689872586318625",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/danghung%40shoponline-229904.iam.gserviceaccount.com"
+}
