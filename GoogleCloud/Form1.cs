@@ -123,7 +123,7 @@ namespace GoogleCloud
                 file.size = obj.Size + "";
                 file.sizeText = BytesToReadableValue(long.Parse(obj.Size.ToString()));
                 file.link = obj.MediaLink;
-                file.SelfLink = obj.SelfLink;
+                file.SelfLink = $"http://storage.googleapis.com/{bucketName}/" + obj.Name;
 
                 files.Add(file);
             }
@@ -226,23 +226,7 @@ namespace GoogleCloud
                         break;
                     }
                 }
-                //var downloadTasks = taskUploadImageVarions.ToList();
-
-                //while (downloadTasks.Count > 0)
-                //{
-                //    Task<DataFolder> firstFinishedTask = await Task.WhenAny(downloadTasks);
-                //    downloadTasks.Remove(firstFinishedTask);
-                //    try
-                //    {
-                //        var imageRespone = await firstFinishedTask;
-                //        results.Add(imageRespone);
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        Export(results);
-                //        break;
-                //    }
-                //}
+               
                 Export(results);
             }
         }
@@ -280,18 +264,19 @@ namespace GoogleCloud
                         ChunkSize = UploadObjectOptions.MinimumChunkSize
                     };
                     var progressReporter = new Progress<IUploadProgress>(OnUploadProgress);
+                    var objectName = Path.GetFileName(url);
                     var data = await storageClient.UploadObjectAsync(bucketName,
-                        Path.GetFileName(url),
+                        objectName,
                         MimeUtility.GetMimeMapping(url),
                         fileStream, uploadObjectOptions,
                         progress: progressReporter
                         ).ConfigureAwait(true);
-
+                    var link = $"http://storage.googleapis.com/{bucketName}/" + data.Name;
                     return new PropertyImage()
                     {
                         FileName = filName,
                         PropertyVariation = variation,
-                        Url = data.MediaLink
+                        Url = link
                     };
                 }
             }
