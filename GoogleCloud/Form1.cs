@@ -253,6 +253,7 @@ namespace GoogleCloud
             {
                 var extension = Path.GetExtension(url);
                 var filName = GetFileName(url, extension);
+                var deleteExtension = DeleteExtension(filName, extension);
                 var variation = !isVariation ? "" : GetVariation(url, extension);
                 using (var fileStream = new FileStream(url, FileMode.Open,
                    FileAccess.Read, FileShare.Read))
@@ -271,10 +272,11 @@ namespace GoogleCloud
                         fileStream, uploadObjectOptions,
                         progress: progressReporter
                         ).ConfigureAwait(true);
+
                     var link = $"http://storage.googleapis.com/{bucketName}/" + data.Name;
                     return new PropertyImage()
                     {
-                        FileName = filName,
+                        FileName = deleteExtension,
                         PropertyVariation = variation,
                         Url = link
                     };
