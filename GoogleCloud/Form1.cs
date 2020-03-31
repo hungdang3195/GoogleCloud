@@ -238,10 +238,10 @@ namespace GoogleCloud
             {
                 foreach (var _url in url.VarionImages)
                 {
-                    var urlImage = await UploadEachFile(_url, false);
+                    var urlImage = await UploadEachFile(_url, true);
                     response.VariationImages.Add(urlImage);
                 }
-                var imageRoot = await UploadEachFile(url.RootImage, false);
+                var imageRoot = string.IsNullOrEmpty(url.RootImage) ? new PropertyImage() : await UploadEachFile(url.RootImage, false);
                 response.RootImage = imageRoot;
             }
             return response;
@@ -265,7 +265,7 @@ namespace GoogleCloud
                         ChunkSize = UploadObjectOptions.MinimumChunkSize
                     };
                     var progressReporter = new Progress<IUploadProgress>(OnUploadProgress);
-                    var objectName = Path.GetFileName(url);
+                    var objectName = $"{Guid.NewGuid().ToString()}.jpg";
                     var data = await storageClient.UploadObjectAsync(bucketName,
                         objectName,
                         MimeUtility.GetMimeMapping(url),
@@ -364,11 +364,6 @@ namespace GoogleCloud
             int pFrom = fileName.LastIndexOf("-") + 1;
             var result = fileName.Substring(pFrom, pTo - pFrom);
             return result;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnExport_Click(object sender, EventArgs e)
