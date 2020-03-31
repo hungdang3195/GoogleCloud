@@ -394,15 +394,16 @@ namespace GoogleCloud
 
         private string DeleteExtension(string url, string extension)
         {
+            var _url = url;
             if (string.IsNullOrEmpty(url))
             {
                 return string.Empty;
             }
             if (!string.IsNullOrEmpty(extension))
             {
-                url.Replace(extension, string.Empty);
+                _url= url.Replace(extension, string.Empty);
             }
-            return url;
+            return _url;
         }
     }
 
