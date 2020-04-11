@@ -124,7 +124,6 @@ namespace GoogleCloud
                 file.sizeText = BytesToReadableValue(long.Parse(obj.Size.ToString()));
                 file.link = obj.MediaLink;
                 file.SelfLink = $"http://storage.googleapis.com/{bucketName}/" + obj.Name;
-
                 files.Add(file);
             }
             dataGridView1.DataSource = files;
@@ -153,8 +152,6 @@ namespace GoogleCloud
                     var progressReporter = new Progress<IDownloadProgress>(OnDownloadProgress);
 
                     await storageClient.DownloadObjectAsync(bucketName, Path.GetFileName(dlg.FileName), fileStream, downloadObjectOptions, token, progress: progressReporter).ConfigureAwait(true);
-
-                    //storageClient.do
                 }
             }
         }
@@ -180,8 +177,20 @@ namespace GoogleCloud
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            storageClient.DeleteObject(bucketName, lbl_file.Text);
+            DeleteItem(lbl_file.Text);
             btn_getFiles_Click(sender, e);
+        }
+        public void DeleteItem(string objectName)
+        {
+            storageClient.DeleteObject(bucketName, objectName);
+        }
+
+        public void DeletedAllItems()
+        {
+            foreach (var obj in storageClient.ListObjects(bucketName, ""))
+            {
+                DeleteItem(obj.Name);
+            }
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -401,6 +410,15 @@ namespace GoogleCloud
                 _url= url.Replace(extension, string.Empty);
             }
             return _url;
+        }
+
+        private void DeleteAll_Click(object sender, EventArgs e)
+        {
+            using(frmDialog frm = new frmDialog(DeletedAllItems))
+            {
+                frm.ShowDialog(this);
+            }
+            btn_getFiles_Click(sender, e);
         }
     }
 
